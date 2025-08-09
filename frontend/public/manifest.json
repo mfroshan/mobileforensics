@@ -1,0 +1,20 @@
+{
+  "name": "Mobile Forensics Scanner",
+  "short_name": "Forensics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1f2937",
+  "icons": [
+    {
+      "src": "/icons/pic.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/pic.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
