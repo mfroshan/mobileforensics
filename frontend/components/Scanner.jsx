@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { jsPDF } from "jspdf";
 import {
   Shield,
   Upload,
@@ -124,12 +125,17 @@ export default function Scanner() {
     }
   };
 
+  const [downloadFormat, setDownloadFormat] = useState(null);
+  const [showFormatMenu, setShowFormatMenu] = useState(false);
+  const [format, setFormat] = useState("json");
+
   // Function to determine if file is malware based on any findings
   const isFileMalware = (item) => {
     const yaraMatches = safeParse(item.yaraMatches, []);
     const aleappMatches = safeParse(item.aleappScan, []);
     const regexMatches = safeParse(item.regexMatches, {});
     
+
     // Check for any malicious indicators
     const hasYaraMatches = yaraMatches.length > 0;
     const hasAleappFindings = aleappMatches.length > 0;
@@ -262,36 +268,130 @@ export default function Scanner() {
     );
   };
 
-  const downloadReport = (item) => {
-    const report = {
-      filename: item.filename,
-      scanDate: new Date(item.uploadedAt).toLocaleString(),
-      riskLevel: item.riskLevel,
-      mlScore: item.mlScore,
-      scanStats: item.scanStats,
-      yaraMatches: safeParse(item.yaraMatches, []),
-      aleappScan: safeParse(item.aleappScan, []),
-      sqliteScan: safeParse(item.sqliteScan, null),
-      regexMatches: safeParse(item.regexMatches, {}),
-      reportUrl: item.reportUrl,
-      totalMatches: getTotalMatches(item),
-    };
+  // const downloadReport = (item) => {
+  //   const report = {
+  //     filename: item.filename,
+  //     scanDate: new Date(item.uploadedAt).toLocaleString(),
+  //     riskLevel: item.riskLevel,
+  //     mlScore: item.mlScore,
+  //     scanStats: item.scanStats,
+  //     yaraMatches: safeParse(item.yaraMatches, []),
+  //     aleappScan: safeParse(item.aleappScan, []),
+  //     sqliteScan: safeParse(item.sqliteScan, null),
+  //     regexMatches: safeParse(item.regexMatches, {}),
+  //     reportUrl: item.reportUrl,
+  //     totalMatches: getTotalMatches(item),
+  //   };
 
-    const blob = new Blob([JSON.stringify(report, null, 2)], {
+  //   const blob = new Blob([JSON.stringify(report, null, 2)], {
+  //     type: "application/json",
+  //   });
+
+  //   const url = URL.createObjectURL(blob);
+  //   const a = document.createElement("a");
+  //   a.href = url;
+  //   a.download = `scan-report-${item.filename}-${
+  //     new Date().toISOString().split("T")[0]
+  //   }.json`;
+  //   document.body.appendChild(a);
+  //   a.click();
+  //   document.body.removeChild(a);
+  //   URL.revokeObjectURL(url);
+  // };
+
+  const downloadReport = (item, format) => {
+    console.log(item,format)
+  if (!format) {
+    alert("Please select a format for downloading.");
+    return; // Stop further execution
+  }
+  const report = {
+    filename: item.filename,
+    scanDate: new Date(item.uploadedAt).toLocaleString(),
+    riskLevel: item.riskLevel,
+    mlScore: item.mlScore,
+    scanStats: item.scanStats,
+    yaraMatches: safeParse(item.yaraMatches, []),
+    aleappScan: safeParse(item.aleappScan, []),
+    sqliteScan: safeParse(item.sqliteScan, null),
+    regexMatches: safeParse(item.regexMatches, {}),
+    reportUrl: item.reportUrl,
+    totalMatches: getTotalMatches(item),
+  };
+
+  let blob;
+  let extension;
+  let mimeType;
+
+  if (format === "json") {
+    blob = new Blob([JSON.stringify(report, null, 2)], {
       type: "application/json",
     });
+    extension = "json";
+    mimeType = "application/json";
+  }
 
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `scan-report-${item.filename}-${
-      new Date().toISOString().split("T")[0]
-    }.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
+  if (format === "csv") {
+    const csv = [
+      ["Field", "Value"],
+      ["Filename", report.filename],
+      ["Scan Date", report.scanDate],
+      ["Risk Level", report.riskLevel],
+      ["ML Score", report.mlScore],
+      ["Scan Stats", JSON.stringify(report.scanStats)],
+      ["YARA Matches", report.yaraMatches.join(", ")],
+      ["ALEAPP Scan", JSON.stringify(report.aleappScan)],
+      ["SQLite Scan", JSON.stringify(report.sqliteScan)],
+      ["Regex Matches", JSON.stringify(report.regexMatches)],
+      ["Report URL", report.reportUrl],
+      ["Total Matches", report.totalMatches],
+    ]
+      .map(row => row.join(","))
+      .join("\n");
+
+    blob = new Blob([csv], { type: "text/csv" });
+    extension = "csv";
+    mimeType = "text/csv";
+  }
+
+  if (format === "pdf") {
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text("Scan Report", 10, 10);
+    doc.setFontSize(12);
+
+    const lines = [
+      `Filename: ${report.filename}`,
+      `Scan Date: ${report.scanDate}`,
+      `Risk Level: ${report.riskLevel}`,
+      `ML Score: ${report.mlScore}`,
+      `Scan Stats: ${JSON.stringify(report.scanStats)}`,
+      `YARA Matches: ${report.yaraMatches.join(", ")}`,
+      `ALEAPP Scan: ${JSON.stringify(report.aleappScan)}`,
+      `SQLite Scan: ${JSON.stringify(report.sqliteScan)}`,
+      `Regex Matches: ${JSON.stringify(report.regexMatches)}`,
+      `Report URL: ${report.reportUrl}`,
+      `Total Matches: ${report.totalMatches}`,
+    ];
+
+    lines.forEach((line, idx) => {
+      doc.text(line, 10, 20 + idx * 10);
+    });
+
+    blob = new Blob([doc.output("arraybuffer")], { type: "application/pdf" });
+    extension = "pdf";
+    mimeType = "application/pdf";
+  }
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `scan-report-${item.filename}-${new Date().toISOString().split("T")[0]}.${extension}`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
 
   const downloadAllHistory = () => {
     const allReports = parsedHistory.map((item) => ({
@@ -515,13 +615,25 @@ export default function Scanner() {
                           <Eye className="w-3 h-3 mr-1" />
                           View
                         </button>
+                        <select
+                          value={format}
+                          onChange={(e) => setFormat(e.target.value)}
+                          className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 bg-white hover:border-green-600
+                        "
+                        >
+                          <option value="json">JSON</option>
+                          <option value="csv">CSV</option>
+                          <option value="pdf">PDF</option>
+                        
+                        </select>
                         <button
-                          onClick={() => downloadReport(item)}
+                          onClick={() => downloadReport(item, format)}
                           className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-sm flex items-center"
                         >
                           <Download className="w-3 h-3 mr-1" />
                           Download
                         </button>
+                       
                       </div>
                     </div>
                   </div>
@@ -598,8 +710,18 @@ export default function Scanner() {
                 >
                   Close Results
                 </button>
+                <select
+                          value={format}
+                          onChange={(e) => setFormat(e.target.value)}
+                          className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 bg-white hover:border-green-600
+                        ">
+                          <option value="json">JSON</option>
+                          <option value="csv">CSV</option>
+                          <option value="pdf">PDF</option>
+                        </select>
+
                 <button
-                  onClick={() => downloadReport(parsedResults[0])}
+                  onClick={() => downloadReport(parsedResults[0], format)}
                   className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded flex items-center"
                 >
                   <Download className="w-4 h-4 mr-2" />
