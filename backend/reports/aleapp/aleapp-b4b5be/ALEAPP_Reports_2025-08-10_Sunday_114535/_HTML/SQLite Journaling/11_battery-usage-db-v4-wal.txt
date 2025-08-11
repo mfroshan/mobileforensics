@@ -1,0 +1,33 @@
+@c\f
+@M
+O
+SQLite format 3
+ctableandroid_metadataandroid_metadata
+CREATE TABLE android_metadata (locale TEXT)
+@*<)
+12b
+
+en_US
+ikSQLite format 3
+!tableroom_master_tableroom_master_table
+CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)P
+Ytablesqlite_sequencesqlite_sequence
+CREATE TABLE sqlite_sequence(name,seq)
+[tableBatteryStateBatteryState
+CREATE TABLE `BatteryState` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` INTEGER NOT NULL, `userId` INTEGER NOT NULL, `appLabel` TEXT, `packageName` TEXT, `isHidden` INTEGER NOT NULL, `bootTimestamp` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `zoneId` TEXT, `totalPower` REAL NOT NULL, `consumePower` REAL NOT NULL, `percentOfTotal` REAL NOT NULL, `foregroundUsageTimeInMs` INTEGER NOT NULL, `backgroundUsageTimeInMs` INTEGER NOT NULL, `drainType` INTEGER NOT NULL, `consumerType` INTEGER NOT NULL, `batteryLevel` INTEGER NOT NULL, `batteryStatus` INTEGER NOT NULL, `batteryHealth` INTEGER NOT NULL)W
+@Or!kn
+@znY
+
+Mb1b66f9e56f8d2f66d76efa391f51e99
+fake_package
+=kzEurope/Dublind
+@hL\5
+
+%	BatteryState
+@M
+5
+
+`loFEurope/Dublind
+V^g
+
+BatteryState

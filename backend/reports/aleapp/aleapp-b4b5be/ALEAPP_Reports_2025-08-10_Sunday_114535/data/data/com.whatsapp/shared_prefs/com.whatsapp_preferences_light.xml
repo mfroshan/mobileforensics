@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="num_notification_channels_created" value="3" />
+    <string name="previous_registration_action">view</string>
+    <boolean name="pref_wa_old_for_uc" value="false" />
+    <string name="previous_registration_screen">enter_number</string>
+    <int name="pref_autoconf_verification_status" value="-1" />
+    <int name="registration_voice_code_length" value="6" />
+    <string name="ka_key_store_static_alias_suffix">530c392c-0e64-4f91-a816-b54c8944519c</string>
+    <int name="reg_attempts_check_exist" value="4" />
+    <int name="autoconf_cf_type" value="1" />
+    <string name="backup_token_retrieval_error">null_token</string>
+    <boolean name="is_chrome_device_cached" value="false" />
+    <int name="foldable_min_display_height" value="1920" />
+    <int name="c2dm_app_vers" value="252076010" />
+    <string name="sticker_store_etag">25a8e620ae300c8a7e4c0614f60f46ad</string>
+    <long name="phoneid_timestamp" value="1753377382977" />
+    <int name="connection_lc" value="0" />
+    <boolean name="signal_protocol_store_is_new" value="true" />
+    <int name="flash_call_eligible" value="1" />
+    <int name="push:recent_push_transport" value="0" />
+    <int name="pref_gpia_prepare_call_count_in_last_interval" value="2" />
+    <long name="last_exit_reason_sync_timestamp" value="1753964515215" />
+    <long name="next_daily_cron_catchup" value="1753378284340" />
+    <int name="foldable_min_display_width" value="1080" />
+    <long name="client_version_upgrade_timestamp" value="1753377389296" />
+    <long name="sticker_store_last_fetch_time" value="1753377390495" />
+    <int name="reg_skip_storage_perm" value="0" />
+    <long name="eula_accepted_time" value="1753377697779" />
+    <boolean name="android.permission.POST_NOTIFICATIONS" value="true" />
+    <long name="last_app_open_timestamp" value="1753377383660" />
+    <boolean name="silent_auth_verification_status" value="false" />
+    <boolean name="is_ls_shown_during_reg" value="true" />
+    <boolean name="pref_flash_call_education_screen_displayed" value="false" />
+    <long name="sticker_store_backoff_time" value="1753964666744" />
+    <long name="pref_last_gpia_prepare_call_timestamp" value="1753377697847" />
+    <long name="push:recent_push_ts" value="1753377679590" />
+    <string name="registration_failure_reason"></string>
+    <long name="ka_static_refresh_ts" value="1753377462" />
+    <int name="notification_channels_schema_version" value="2" />
+    <int name="sticker_store_backoff_attempt" value="2" />
+    <int name="registration_sms_code_length" value="6" />
+    <boolean name="clean_up_discovery_stickers_from_internal_storage" value="true" />
+    <long name="app_background_time" value="786942" />
+    <long name="push:most_recent_push_received_ts" value="1753377680066" />
+    <long name="last_heartbeat_login" value="1753964609403" />
+    <boolean name="input_enter_send" value="false" />
+    <int name="number_of_inactive_accounts" value="0" />
+    <boolean name="pref_prefer_sms_over_flash" value="false" />
+    <int name="more_sheep_random_number" value="565" />
+    <long name="dithered_last_signed_prekey_rotation" value="1752593858576" />
+    <int name="number_of_process_starts" value="3" />
+    <string name="pref_autoconf_feo2_query_status">error_security_exception</string>
+    <string name="c2dm_reg_id">em3pRQ8BSqiC9_V08XtIIf:APA91bFMGiaaoo9xLDg8nX0TU0je8YCADRfvG05cs-Q0aBWoN_1_NX0-p1BAqg8qSDmjKkpqxm5AGeWfsaioI_qCfxSEQjizrycVoGprqakWdqPtj37zaJc</string>
+    <int name="pref_email_otp_eligibility" value="0" />
+    <boolean name="registration_use_sms_retriever" value="true" />
+    <int name="pref_flash_call_education_link_clicked" value="0" />
+    <long name="next_randomized_daily_cron" value="1753974523823" />
+    <int name="pref_flash_call_call_log_permission_granted" value="0" />
+    <string name="registration_push_notif_code">1sZJe68yYhQ=</string>
+    <boolean name="reg_abprop_passkey_create_education_screen" value="true" />
+    <string name="phoneid_id">1c4b80ff-5fe3-4fe7-b0b5-13d8d15d31a2</string>
+    <int name="pref_send_sms_eligibility" value="0" />
+    <long name="last_notif_posted_timestamp" value="1753377689168" />
+    <string name="pref_reg_methods_order">passkey</string>
+    <int name="pref_flash_call_manage_call_permission_granted" value="0" />
+    <boolean name="report_unhealthy_module" value="true" />
+    <string name="com.whatsapp.registration.RegisterPhone.mistyped_state">7</string>
+    <boolean name="reg_abprop_passkey_create" value="true" />
+    <int name="pref_wa_old_eligibility" value="0" />
+    <long name="last_daily_cron" value="1753964340443" />
+    <string name="external_storage_type">scoped</string>
+    <int name="reg_attempts_generate_code" value="3" />
+    <long name="last_non_calling_notif_posted_timestamp" value="1753377689168" />
+    <int name="autoconf_type" value="-1" />
+    <int name="logins_with_messages" value="0" />
+    <long name="phoneid_last_sync_timestamp" value="1753964340236" />
+    <string name="perf_device_id">5222f8ad-d399-4fcd-93e0-66f97a21b0bc</string>
+    <int name="notification_channel_upgrade_version" value="1" />
+    <int name="foldable_max_display_width" value="1080" />
+    <string name="registration_last_code_method">sms</string>
+    <int name="foldable_max_display_height" value="1920" />
+</map>

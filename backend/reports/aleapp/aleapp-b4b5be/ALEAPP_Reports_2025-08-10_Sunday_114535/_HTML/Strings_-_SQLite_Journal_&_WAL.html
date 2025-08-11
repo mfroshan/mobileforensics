@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ALEAPP - Strings - SQLite Journal & WAL report</title>
+        <!-- Dark mode -->
+        <link rel="stylesheet" href="_elements/dark-mode.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="_elements/all.css">
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="_elements/Roboto.css">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="_elements/MDB-Free_4.13.0/css/bootstrap.min.css">
+        <!-- Material Design Bootstrap - TOGGLE THIS FOR ALTERNATE DESIGN!-->
+        <link rel="stylesheet" href="_elements/MDB-Free_4.13.0/css/mdb.min.css">
+        <!-- Highlight.js -->
+        <link rel="stylesheet" href="_elements/highlight.min.css">
+        <script src="_elements/highlight.min.js"></script>
+        <!-- Cal-Heatmap -->
+        <script src="_elements/d3.v7.min.js"></script>
+        <script src="_elements/cal-heatmap.min.js"></script>
+        <link rel="stylesheet" href="_elements/cal-heatmap.css">
+        <script src="_elements/popper.min.js"></script>
+        <script src="_elements/Tooltip.min.js"></script>
+        <!-- Your custom styles (optional) -->
+        <link rel="stylesheet" href="_elements/dashboard.css">
+        <link rel="stylesheet" href="_elements/chat.css">
+        <!-- MDBootstrap Datatables  -->
+        <link rel="stylesheet" href="_elements/MDB-Free_4.13.0/css/addons/datatables.min.css" rel="stylesheet">
+        <link href="_elements/timeline/css/timeline.min.css" rel="stylesheet" />
+
+        <!-- Icons -->
+        <!--script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script-->
+        <script src="_elements/feather.min.js"></script>
+    </head>
+    <body>
+
+    <!-- Start your project here-->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html">ALEAPP 3.4.0</a>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+            <label class="custom-control-label mr-2" for="darkSwitch" style="color:white">Dark Switch</label>
+        </div>
+        <script src="_elements/dark-mode-switch.js"></script>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky" id="sidebar_id">
+                    <ul class="nav flex-column">
+
+        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            Saved Reports
+        </h6>
+        
+        <li class="nav-item">
+            <a class="nav-link " href="index.html">
+                <span data-feather="home"></span> Report Home
+            </a>
+        </li>
+        
+        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            Contacts
+        </h6>
+        
+        <li class="nav-item">
+            <a class="nav-link " href="Contacts.html">
+                <span data-feather="user"></span> Contacts
+            </a>
+        </li>
+        
+        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            Gboard Keyboard
+        </h6>
+        
+        <li class="nav-item">
+            <a class="nav-link " href="Gboard_-_Sessions.html">
+                <span data-feather="alert-triangle"></span> Gboard - Sessions
+            </a>
+        </li>
+        
+        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            SQLite Journaling
+        </h6>
+        
+        <li class="nav-item">
+            <a class="nav-link  active" href="Strings_-_SQLite_Journal_&_WAL.html">
+                <span data-feather="book-open"></span> Strings - SQLite Journal & WAL
+            </a>
+        </li>
+        
+        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            Settings Services
+        </h6>
+        
+        <li class="nav-item">
+            <a class="nav-link " href="Settings_Services_-_Battery_Usage.html">
+                <span data-feather="battery-charging"></span> Settings Services - Battery Usage
+            </a>
+        </li>
+        
+        <h6 class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            Wipe & Setup
+        </h6>
+        
+        <li class="nav-item">
+            <a class="nav-link " href="Setup_Wizard_Info.xml.html">
+                <span data-feather="loader"></span> Setup Wizard Info.xml
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link " href="Suggestions.xml.html">
+                <span data-feather="loader"></span> Suggestions.xml
+            </a>
+        </li>
+        
+    <script>
+        feather.replace();
+        var element = document.getElementById("sidebar_id");
+        var searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('navpos')) {
+            var nav_pos = parseInt(searchParams.get('navpos'));
+            if (!isNaN(nav_pos))
+                element.scrollTop = nav_pos;
+        }
+    </script>
+
+                    </ul>
+                    <br /><br />
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+                <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <img src="_elements/ALEAPP_banner.png" alt="ALEAPP banner">
+                    <h3 class="display-5">Strings - SQLite Journal & WAL report</h1>
+                    <h6 class="animated fadeIn mb-3">ASCII strings extracted from SQLite journal and WAL files.</h6>
+                </div>
+
+                <div id="mySpinner" class="spinner-border text-info float-right" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+<h6>Total number of entries: 14</h6><p class="lead">Strings - SQLite Journal & WAL located at: </p><br /><div class='table-responsive'><table id="dtBasicExample" class="table table-striped table-bordered table-xsm" cellspacing="0" ><thead><tr><th class="th-sm">Report</th><th class="th-sm">Location</th></tr></thead><tbody><tr><td><a href="SQLite Journaling/1_androidx.work.workdb-wal.txt" style = "color:blue" target="_blank">androidx.work.workdb-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.google.android.apps.youtube.music/no_backup/androidx.work.workdb-wal</td></tr><tr><td><a href="SQLite Journaling/2_stickers.db-wal.txt" style = "color:blue" target="_blank">stickers.db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/databases/stickers.db-wal</td></tr><tr><td><a href="SQLite Journaling/3_chatsettings.db-wal.txt" style = "color:blue" target="_blank">chatsettings.db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/databases/chatsettings.db-wal</td></tr><tr><td><a href="SQLite Journaling/4_axolotl.db-wal.txt" style = "color:blue" target="_blank">axolotl.db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/databases/axolotl.db-wal</td></tr><tr><td><a href="SQLite Journaling/5_wa.db-wal.txt" style = "color:blue" target="_blank">wa.db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/databases/wa.db-wal</td></tr><tr><td><a href="SQLite Journaling/6_media.db-wal.txt" style = "color:blue" target="_blank">media.db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/databases/media.db-wal</td></tr><tr><td><a href="SQLite Journaling/7_sync.db-wal.txt" style = "color:blue" target="_blank">sync.db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/databases/sync.db-wal</td></tr><tr><td><a href="SQLite Journaling/8_androidx.work.workdb-wal.txt" style = "color:blue" target="_blank">androidx.work.workdb-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.whatsapp/no_backup/androidx.work.workdb-wal</td></tr><tr><td><a href="SQLite Journaling/9_androidx.work.workdb-wal.txt" style = "color:blue" target="_blank">androidx.work.workdb-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.android.remoteprovisioner/no_backup/androidx.work.workdb-wal</td></tr><tr><td><a href="SQLite Journaling/10_contextual-cards-db-wal.txt" style = "color:blue" target="_blank">contextual-cards-db-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.google.android.settings.intelligence/databases/contextual-cards-db-wal</td></tr><tr><td><a href="SQLite Journaling/11_battery-usage-db-v4-wal.txt" style = "color:blue" target="_blank">battery-usage-db-v4-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.google.android.settings.intelligence/databases/battery-usage-db-v4-wal</td></tr><tr><td><a href="SQLite Journaling/12_routines-wal.txt" style = "color:blue" target="_blank">routines-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.google.android.settings.intelligence/databases/routines-wal</td></tr><tr><td><a href="SQLite Journaling/13_engine_database_prototype-wal.txt" style = "color:blue" target="_blank">engine_database_prototype-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.google.android.settings.intelligence/databases/engine_database_prototype-wal</td></tr><tr><td><a href="SQLite Journaling/14_androidx.work.workdb-wal.txt" style = "color:blue" target="_blank">androidx.work.workdb-wal</a></td><td>/Users/roshan/Mobilescan/backend/reports/aleapp/aleapp-b4b5be/ALEAPP_Reports_2025-08-10_Sunday_114535/data/data/com.google.android.settings.intelligence/no_backup/androidx.work.workdb-wal</td></tr></tbody><tfoot><tr><th>Report</th><th>Location</th></tr></tfoot></table></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- End your project here-->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="_elements/MDB-Free_4.13.0/js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="_elements/MDB-Free_4.13.0/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="_elements/MDB-Free_4.13.0/js/bootstrap.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="_elements/MDB-Free_4.13.0/js/mdb.min.js"></script>
+    <!-- Your custom scripts -->
+    <!-- MDBootstrap Datatables  -->
+    <script type="text/javascript" src="_elements/MDB-Free_4.13.0/js/addons/datatables.min.js"></script>
+    <!-- Chart.js -->
+    <script type="text/javascript" src="_elements/chart.umd.min.js"></script>
+    <script type="text/javascript" src="_elements/moment.min.js"></script>
+    <script type="text/javascript" src="_elements/timeline/js/timeline.min.js"></script>
+    <!-- Garmin Functions -->
+    <script type="text/javascript" src="_elements/garmin-functions.js"></script>
+    <script type="text/javascript" src="_elements/chat.js"></script>
+    <script>
+        feather.replace()
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#dtBasicExample').DataTable({
+                //"scrollY": "60vh",
+                //"scrollX": "10%",
+                //"scrollCollapse": true,
+                "aLengthMenu": [[ 15, 50, 100, -1 ], [ 15, 50, 100, "All" ]],
+            });
+            $('.dataTables_length').addClass('bs-select');
+            $('#mySpinner').remove();
+            //$('#infiniteLoading').remove();
+        });
+    </script>
+
+    <script>
+        var elemScrollTop = document.getElementById("sidebar_id").scrollTop.toString();
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById("sidebar_id");
+            element.addEventListener("scroll", function() {
+                elemScrollTop = document.getElementById("sidebar_id").scrollTop.toString();
+            });
+        });
+        $('a.nav-link').click(function(e) {
+            e.preventDefault();
+            location.href = $(this).attr('href') + "?navpos=" + elemScrollTop;
+        });
+    </script>
+
+    </body>
+</html>

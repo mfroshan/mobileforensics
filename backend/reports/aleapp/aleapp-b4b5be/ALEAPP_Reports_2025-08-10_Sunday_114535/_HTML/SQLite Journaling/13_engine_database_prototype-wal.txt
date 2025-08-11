@@ -1,0 +1,35 @@
+lKwJ\ SZ'
+lKwJ\
+X~5?SQLite format 3
+ctableandroid_metadataandroid_metadata
+CREATE TABLE android_metadata (locale TEXT)
+lKwJ\
+D2Y
+
+en_US
+lKwJ\U
+S9SQLite format 3
+!tableroom_master_tableroom_master_table
+CREATE TABLE room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)]
+=tableCurrentWifiRingerStateEntityCurrentWifiRingerStateEntity
+CREATE TABLE `CurrentWifiRingerStateEntity` (`id` INTEGER NOT NULL, `startDateTime` TEXT, `ssid` TEXT, `ringerMode` INTEGER NOT NULL, PRIMARY KEY(`id`))z
+7tableBucketEntityBucketEntity
+CREATE TABLE `BucketEntity` (`id` INTEGER NOT NULL, `states` BLOB, PRIMARY KEY(`id`))W
+lKwJ\a
+lKwJ\n$,
+Md4e22cbc01c5365ceb7d552f2f5c5ab3
+lKwJ\"B
+[7
+v
+
+lKwJ\79	zu
+
+lKwJ\j
+2025-07-24T17:49:46.179+01:00[Europe/Dublin]<unknown ssid>
+
+[x_s
+
+2025-07-31T13:19:30.645+01:00[Europe/Dublin]<disconnected>
+g8)
+
+2025-07-31T13:20:00.540+01:00[Europe/Dublin]<unknown ssid>

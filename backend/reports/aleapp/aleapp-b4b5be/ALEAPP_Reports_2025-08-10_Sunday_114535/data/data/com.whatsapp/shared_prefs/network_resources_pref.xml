@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="downloadstate/android_to_ios_start_night" value="3" />
+    <int name="downloadstate/chat_transfer_android_to_android_lottie_animation" value="3" />
+    <int name="downloadstate/android_to_ios_start" value="3" />
+</map>

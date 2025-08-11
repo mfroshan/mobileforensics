@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="pref_use_phone_number_token_key" value="true" />
+    <int name="pref_silent_auth_eligible" value="0" />
+    <int name="pref_wa_onboarding_eligible" value="-1" />
+    <int name="pref_wa_old_eligible" value="0" />
+    <int name="pref_flash_type" value="1" />
+    <string name="token_used_during_reg">gccXgUb5/AfvX70h49tRfK8o1IM</string>
+    <boolean name="passkey_no_credentials_present" value="true" />
+    <boolean name="pref_lid_blocklist_migrated" value="false" />
+    <long name="onboarding_eligible_timestamp" value="1753464081129" />
+</map>

@@ -1,0 +1,90 @@
+6&IB&
+6&tkFHeSQLite format 3
+ctableandroid_metadataandroid_metadata
+CREATE TABLE android_metadata (locale TEXT)
+6& Pz)4
+jyC
+
+en_US
+SQLite format 3
+6&v-0	
+6&MD&_0
+
+6&[A
+
+2	S
+
+6&-8DkV
+]0AC&(:
+
+::`
+
+;<-
+
+6&_Y8
+
+6&~"+1
+
+'F[
+
+6&rm/<%
+
+zErT
+6&De
+6&04
+6&xu{(
+6&"K
+)-E
+
+`
+nZ
+'
+O
++tablehistory_sync_companionhistory_sync_
+3tablemsg_history_syncmsg_history_syncCREATE TABLE msg_history_sync(_id INTEGER PRIMARY KEY AUTOINCREMENT, device_id TEXT NOT NULL, sync_type INTEGER NOT NULL, last_processed_msg_row_id INTEGER, oldest_msg_row_id INTEGER, sent_msgs_count INTEGER, chunk_order INTEGER, sent_bytes INTEGER, last_chunk_timestamp INTEGER, status INTEGER, peer_msg_row_id INTEGER, oldest_message_to_sync_row_id INTEGER, session_id TEXT, md_reg_attempt_id TEXT, size_limit_bytes INTEGER, full_history_on_demand_request_id TEXT )
+	
+Ytablepeer_messagespeer_messagesCREATE TABLE peer_messages(_id INTEGER PRIMARY KEY AUTOINCREMENT,message_type INTEGER NOT NULL, key_remote_jid TEXT NOT NULL, key_from_me INTEGER, key_id TEXT NOT NULL, device_id TEXT, timestamp INTEGER, data TEXT, acked BOOLEAN )E
+9tablepending_mutationspending_mutations	CREATE TABLE pending_mutations(_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, mutation_index TEXT UNIQUE NOT NULL, mutation_value BLOB, mutation_version INTEGER NOT NULL, operation BLOB NOT NULL, is_ready_to_sync BOOLEAN NOT NULL DEFAULT 1, collection_name TEXT, device_id INTEGER, epoch INTEGER, are_dependencies_missing BOOLEAN NOT NULL DEFAULT 0, mutation_name TEXT NOT NULL DEFAULT '', chat_jid TEXT )A
+indexsqlite_autoindex_pending_mutations_1pending_mutations
+J
+;tablecollection_versionscollection_versions
+CREATE TABLE collection_versions (collection_name TEXT PRIMARY KEY, version INTEGER NOT NULL, lt_hash BLOB, dirty_version INTEGER NOT NULL DEFAULT -1 )E
+indexsqlite_autoindex_collection_versions_1collection_versions
+Ytablesqlite_sequencesqlite_sequence
+CREATE TABLE sqlite_sequence(name,seq)
+qtablesyncd_mutationssyncd_mutations
+CREATE TABLE syncd_mutations(_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, mutation_index TEXT UNIQUE NOT NULL, mutation_value BLOB, mutation_version INTEGER NOT NULL, collection_name TEXT NOT NULL, are_dependencies_missing BOOLEAN NOT NULL, mutation_mac BLOB, device_id INTEGER NOT NULL DEFAULT 0, epoch INTEGER NOT NULL DEFAULT 0, chat_jid TEXT, mutation_name TEXT )=
+indexsqlite_autoindex_syncd_mutations_1syncd_mutations
+6&O}
+
+
+
+"`		
+Mindexplaceholder_retry_peer_msg_indexplaceholder_retry_message
+CREATE INDEX placeholder_retry_peer_msg_index ON placeholder_retry_message (peer_message_row_id)
+;indexplaceholder_retry_timestamp_indexplaceholder_retry_message
+CREATE INDEX placeholder_retry_timestamp_index ON placeholder_retry_message (timestamp)U
+9tableplaceholder_retry_messageplaceholder_retry_message
+CREATE TABLE placeholder_retry_message (message_row_id INTEGER PRIMARY KEY NOT NULL, peer_message_row_id INTEGER NOT NULL, timestamp INTEGER NOT NULL)M
+	indexrmr_response_error_file_key_rmr_source_device_idrmr_response_error
+CREATE INDEX rmr_response_error_file_key_rmr_source_device_id ON rmr_response_error (file_key, rmr_source, response_device_id)%
+Mindexrmr_response_error_file_key_rmr_sourcermr_response_error
+CREATE INDEX rmr_response_error_file_key_rmr_source ON rmr_response_error (file_key, rmr_source)$
+stablermr_response_errorrmr_response_error
+CREATE TABLE rmr_response_error (_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, file_key TEXT NOT NULL, rmr_source INTEGER NOT NULL, failure_count INTEGER NOT NULL, response_device_id INTEGER NOT NULL, last_fetch_timestamp INTEGER NOT NULL  )
+Cindexhistory_sync_companion_indexhistory_sync_companion
+CREATE INDEX history_sync_companion_index ON history_sync_companion (sync_type,chunk_order)K
+indexsqlite_autoindex_history_sync_companion_1history_sync_companion
++tablehistory_sync_companionhistory_sync_companion
+CREATE TABLE history_sync_companion (message_id TEXT PRIMARY KEY NOT NULL, sync_type INTEGER NOT NULL, chunk_order INTEGER NOT NULL, media_key BLOB, media_hash TEXT NOT NULL, media_enc_hash TEXT NOT NULL, file_size INTEGER NOT NULL, direct_path TEXT NOT NULL, local_path TEXT, start_time INTEGER, inline_payload BLOB, enc_handle TEXT )?
+uindexsyncd_mutations_active_mutations_chat_jid_indexsyncd_mutations
+CREATE INDEX syncd_mutations_active_mutations_chat_jid_index ON syncd_mutations (chat_jid, are_dependencies_missing)#
+Oindexsyncd_mutations_active_mutations_indexsyncd_mutations
+CREATE INDEX syncd_mutations_active_mutations_index ON syncd_mutations (are_dependencies_missing)h
+]triggercrypto_info_bi_for_missing_keys_triggercrypto_infoCREATE TRIGGER crypto_info_bi_for_missing_keys_trigger AFTER INSERT ON crypto_info BEGIN DELETE FROM missing_keys WHERE device_id=new.device_id AND epoch=new.epoch; END7
+indexsqlite_autoindex_missing_keys_1missing_keys
+Stablemissing_keysmissing_keys
+CREATE TABLE missing_keys (device_id INTEGER NOT NULL, epoch INTEGER NOT NULL, collection_name TEXT NOT NULL, PRIMARY KEY ( device_id , epoch , collection_name ) )5
+indexsqlite_autoindex_crypto_info_1crypto_info
+etablecrypto_infocrypto_info
+CREATE TABLE crypto_info (device_id INTEGER NOT NULL, epoch INTEGER NOT NULL, key_data BLOB NOT NULL, timestamp INTEGER NOT NULL, fingerprint BLOB NOT NULL, stale_timestamp INTEGER NOT NULL DEFAULT 0, PRIMARY KEY ( device_id , epoch ) )

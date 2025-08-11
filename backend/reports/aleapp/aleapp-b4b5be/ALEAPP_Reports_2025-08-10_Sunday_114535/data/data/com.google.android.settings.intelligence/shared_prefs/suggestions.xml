@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <long name="com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.suggestions.NightlightTrampolineActivity_setup_time" value="1753375767564" />
+    <boolean name="com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.suggestions.NightlightTrampolineActivity_is_dismissed" value="false" />
+    <long name="com.android.settings/com.google.android.settings.gestures.AssistGestureSuggestion_setup_time" value="1753375767527" />
+    <long name="com.android.settings/com.google.android.settings.aware.AwareSettingsActivity_setup_time" value="1753375767563" />
+    <boolean name="com.android.settings/com.android.settings.biometrics.fingerprint.FingerprintEnrollSuggestionActivity_is_dismissed" value="false" />
+    <long name="com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSetupWizardActivity_setup_time" value="1753375767544" />
+    <long name="com.android.settings/com.android.settings.wallpaper.WallpaperSuggestionActivity_setup_time" value="1753375767563" />
+    <boolean name="com.android.settings/com.android.settings.password.ScreenLockSuggestionActivity_is_dismissed" value="false" />
+    <long name="com.android.settings/com.android.settings.wallpaper.StyleSuggestionActivity_setup_time" value="1753375767563" />
+    <long name="com.google.android.gms/com.google.android.gms.trustlet.onbody.discovery.OnbodyPromotionActivity_setup_time" value="1753375767564" />
+    <long name="com.android.settings/com.android.settings.biometrics.fingerprint.FingerprintEnrollSuggestionActivity_setup_time" value="1753375767530" />
+    <boolean name="com.android.settings/com.android.settings.wallpaper.StyleSuggestionActivity_is_dismissed" value="false" />
+    <boolean name="com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSetupWizardActivity_is_dismissed" value="false" />
+    <boolean name="com.android.settings/com.google.android.settings.aware.AwareSettingsActivity_is_dismissed" value="false" />
+    <long name="com.android.settings/com.android.settings.password.ScreenLockSuggestionActivity_setup_time" value="1753375767544" />
+    <boolean name="com.android.settings/com.google.android.settings.gestures.AssistGestureSuggestion_is_dismissed" value="false" />
+    <boolean name="com.android.settings/com.android.settings.wifi.calling.WifiCallingSuggestionActivity_is_dismissed" value="false" />
+    <long name="com.android.settings/com.android.settings.notification.zen.ZenSuggestionActivity_setup_time" value="1753375767563" />
+    <boolean name="com.android.settings/com.google.android.settings.aware.WakeScreenSuggestionActivity_is_dismissed" value="false" />
+    <boolean name="com.android.emergency/com.android.emergency.edit.EditInfoSuggestion_is_dismissed" value="false" />
+    <long name="com.android.emergency/com.android.emergency.edit.EditInfoSuggestion_setup_time" value="1753375767563" />
+    <boolean name="com.android.settings/com.android.settings.notification.zen.ZenSuggestionActivity_is_dismissed" value="false" />
+    <boolean name="com.google.android.gms/com.google.android.gms.trustlet.onbody.discovery.OnbodyPromotionActivity_is_dismissed" value="false" />
+    <boolean name="com.android.settings/com.android.settings.wallpaper.WallpaperSuggestionActivity_is_dismissed" value="false" />
+    <long name="com.android.settings/com.android.settings.wifi.calling.WifiCallingSuggestionActivity_setup_time" value="1753375767563" />
+    <long name="com.android.settings/com.google.android.settings.aware.WakeScreenSuggestionActivity_setup_time" value="1753375767563" />
+    <long name="com.android.settings.suggested.category.DEFERRED_SETUP_setup_time" value="1753375767571" />
+</map>

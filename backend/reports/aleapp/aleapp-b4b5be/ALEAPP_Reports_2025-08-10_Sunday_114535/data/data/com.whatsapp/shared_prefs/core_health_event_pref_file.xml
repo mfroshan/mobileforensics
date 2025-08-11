@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <int name="bg_cold_start_count_pref" value="2" />
+    <int name="total_cold_start_count_pref" value="3" />
+    <int name="last_cold_start_time_min" value="29232740" />
+</map>

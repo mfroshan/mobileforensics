@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <long name="last_ntp_client_time" value="1753964606705" />
+    <boolean name="async_tasks_pending_for_version_change" value="false" />
+    <boolean name="app_lock_auth_needed" value="true" />
+    <boolean name="run_on_connect_tasks_for_version_change" value="true" />
+    <boolean name="force_db_check" value="true" />
+    <int name="startup_migrated_version" value="18" />
+    <string name="version">2.25.20.76</string>
+    <int name="year_class_cached_value_2016_pref" value="2013" />
+    <long name="client_ntp_time_diff" value="2682" />
+    <int name="registration_state" value="1" />
+    <int name="registration_device_id" value="0" />
+    <boolean name="force_backup_check" value="true" />
+</map>

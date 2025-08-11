@@ -1,0 +1,513 @@
+Gh&
+[
+Gh&;DSQLite format 3
+ctableandroid_metadataandroid_metadata
+CREATE TABLE android_metadata (locale TEXT)
+Gh&xEWT 
+Gh&1
+en_US
+Gh&k{
+SQLite format 3
+Gh&88
+Gh&-
+dO"
+
+Gh& _~!W
+
+Gh&Q
+	wa_props
+Gh&B^
+
+Gh&d$L
+Gh&ex
+sj4
+
+Gh&&j
+cEX
+
+Gh&L
+
+Gh&N
+Gh&xHf
+Gh&#"&
+Gh&$P\
+Gh&@
+Gh&v6
+Gh&N>
+
+Gh&MZ&s
+Gh&6]:kN
+
+Gh&9	
+
+k`T
+
+Gh&Z
+Gh&.eJ
+
+Gh&*_;PMJ0
+
+Gh&Kd
+Gh&*`rS
+Gh&Q_L
+Gh&L6WZN'
+
+Gh&t<#
+tgne
+
+Gh&B(j
+
+Gh&
+Gh&E
+}l~9
+
+Gh&J
+Gh&	
+Gh&~8}
+Gh&Z	+@9WC
+Gh&0t|U"
+
+Gh&A
+N3A9i
+
+Gh&H
+Gh&0SG
+
+Gh&S
+X
+^Gf
+
+Gh&q}&T
+
+5mwa_db_schema_versionConsumerRelease-2f4350bbdd1d93b7778c1208c87933f0
+Gh& 5l
+5	wa_db_schema_version
+Gh&E~{$R
+
+Gh&WjQk1*
+
+Gh&h
+:+:	
+
+Gh&]-xI\
+Gh&
+bQNK
+
+Gh&t]Q8
+Gh&i
+Gh&I*-%
+Gh&Hk
+Gh&Y4A02
+
+Gh&{Xay'
+Gh&|DM
+Gh&#sO
+
+Gh&
+y
+Gh&HhN
+
+Gh&W
+Gh&SriV
+
+Gh&F$
+
+Gh&l(9.b&
+
+Gh&IY_D
+
+?ZI]
+
+Gh&,	i
+
+Gh&&.
+
+Gh&<
+Gh&y.)
+Gh&mMR)K
+Gh&n=	y
+
+
+Gh&I
+
+Gh&hY/
+
+k9l2
+
+Gh&rW
+
+Gh&`a!i]`
+
+83F
+
+Gh&btG"
+
+Gh&c^
+Gh&+X
+jyN
+
+Gh&eUy`O
+
+Gh&",/
+
+Gh&T
+yF)
+
+Gh&~2
+Gh&C
+Gh&uWM
+Gh&S
+Gh&CA`\
+
+Gh&ai
+
+
+Gh&:[H}
+Gh&-g9
+Gh&$Y+^
+
+Gh&}Ioj:
+
+Gh&=q	CN
+
+Gh&kp
+zdn
+
+Gh&)
+')YP
+
+Gh&Pi
+
+#P,
+[
+Ktablewa_biz_profiles_service_areaswa_biz_profiles_service_areas:CREATE TABLE wa_biz_profiles_service_areas(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,area_description TEXT,radius INTEGER NOT NULL,center_latitude REAL NOT NULL,center_longitude REAL NOT NULL)
+Mtablewa_biz_profiles_direct_connection_allowed_country_codeswa_biz_profiles_direct_connection_allowed_country_codes9CREATE TABLE wa_biz_profiles_direct_connection_allowed_country_codes(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,country_code TEXT);6
+indexsqlite_autoindex_dismissed_chat_1dismissed_chat8z5
+/tabledismissed_chatdismissed_chat7CREATE TABLE dismissed_chat(chat_jid TEXT PRIMARY KEY,timestamp INTEGER NOT NULL)c4
+indexsqlite_autoindex_group_membership_approval_requests_1group_membership_approval_requests6B3
+otablegroup_membership_approval_requestsgroup_membership_approval_requests5CREATE TABLE group_membership_approval_requests(group_jid TEXT NOT NULL,requester_jid TEXT NOT NULL,request_method TEXT NOT NULL,request_creation_time INTEGER,parent_group_jid TEXT,requested_by_jid TEXT,PRIMARY KEY (group_jid,requester_jid))[2
+indexsqlite_autoindex_wa_biz_integrity_chat_settings_1wa_biz_integrity_chat_settings4X1
++tablewa_biz_integrity_chat_settingswa_biz_integrity_chat_settings3CREATE TABLE wa_biz_integrity_chat_settings(jid TEXT PRIMARY KEY NOT NULL,last_delivered_sort_id LONG NOT NULL,last_read_sort_id LONG NOT NULL)i0
+qtablewa_biz_profiles_hourswa_biz_profiles_hours2CREATE TABLE wa_biz_profiles_hours(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,day_of_week INTEGER,mode INTEGER,open_time INTEGER,close_time INTEGER)S/
+indexsqlite_autoindex_member_suggested_groups_v2_1member_suggested_groups_v212.
+otablemember_suggested_groups_v2member_suggested_groups_v20CREATE TABLE member_suggested_groups_v2(group_jid TEXT NOT NULL,parent_group_jid TEXT NOT NULL,subject TEXT NOT NULL,description TEXT,creator_jid TEXT NOT NULL,request_creation_time INTEGER NOT NULL,participant_count INTEGER NOT NULL DEFAULT 0,is_existing_group BOOLEAN NOT NULL DEFAULT 0,is_hidden_subgroup INTEGER,PRIMARY KEY (parent_group_jid,group_jid,creator_jid))N-
+Ctablewa_last_entry_pointwa_last_entry_point/CREATE TABLE wa_last_entry_point(jid TEXT NOT NULL,entry_point_type TEXT NOT NULL,entry_point_id TEXT,entry_point_time INTEGER,first_entry_point_type TEXT)S,
+indexsqlite_autoindex_mm_notification_impression_1mm_notification_impression.L+
+#tablemm_notification_impressionmm_notification_impression-CREATE TABLE mm_notification_impression(chat_lid TEXT PRIMARY KEY,impression_counter INTEGER NOT NULL DEFAULT 0,timestamp INTEGER NOT NULL)n*
+ytablewa_stickers_allow_listwa_stickers_allow_list,CREATE TABLE wa_stickers_allow_list(jid TEXT NOT NULL)a)
+indexsqlite_autoindex_wa_biz_category_service_offerings_1wa_biz_category_service_offerings+n(
+Ktablewa_biz_category_service_offeringswa_biz_category_service_offerings*CREATE TABLE wa_biz_category_service_offerings(_id TEXT PRIMARY KEY NOT NULL,category_id TEXT NOT NULL,category_name TEXT NOT NULL,offering_name TEXT NOT NULL)
+#tablewa_biz_brand_id_listwa_biz_brand_id_list)CREATE TABLE wa_biz_brand_id_list(jid TEXT NOT NULL,brand_id TEXT NOT NULL)
+1tablesystem_contacts_version_tablesystem_contacts_version_table(CREATE TABLE system_contacts_version_table(id INTEGER PRIMARY KEY,version INTEGER)J%
+;tablewa_vnames_localizedwa_vnames_localized'CREATE TABLE wa_vnames_localized(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,lg TEXT NOT NULL,lc TEXT NOT NULL,verified_name TEXT NOT NULL)
+Gh&2O>
+0
+X
+
+!
+
+3	v
+indexsqlite_autoindex_wa_trusted_contacts_send_1wa_trusted_contacts_send&A#
+tablewa_trusted_contacts_sendwa_trusted_contacts_send%CREATE TABLE wa_trusted_contacts_send(jid TEXT PRIMARY KEY NOT NULL,sent_tc_token_timestamp LONG NOT NULL,real_issue_timestamp LONG)x"
+indexsqlite_autoindex_non_admin_group_membership_approval_requests_1non_admin_group_membership_approval_requests$Q!
+etablenon_admin_group_membership_approval_requestsnon_admin_group_membership_approval_requests#CREATE TABLE non_admin_group_membership_approval_requests(group_jid TEXT NOT NULL,requested_by_jid TEXT NOT NULL,requested_for_jid TEXT NOT NULL,request_creation_time INTEGER,PRIMARY KEY (group_jid, requested_by_jid, requested_for_jid))c 
+indexsqlite_autoindex_recently_accepted_deeplink_invites_1recently_accepted_deeplink_invites"h
+;tablerecently_accepted_deeplink_invitesrecently_accepted_deeplink_invites!CREATE TABLE recently_accepted_deeplink_invites(user_jid TEXT NOT NULL,invite_accepted_time INTEGER,invite_receiver_reason TEXT,PRIMARY KEY (user_jid))E
+indexsqlite_autoindex_wa_newsletter_props_1wa_newsletter_props  
+gtablewa_newsletter_propswa_newsletter_props
+CREATE TABLE wa_newsletter_props(_id INTEGER PRIMARY KEY AUTOINCREMENT,prop_name TEXT UNIQUE,prop_value TEXT)k
+wtablewa_block_list_interopwa_block_list_interop
+CREATE TABLE wa_block_list_interop(jid TEXT NOT NULL);
+indexsqlite_autoindex_meta_ai_memory_1meta_ai_memory
+ctablemeta_ai_memorymeta_ai_memory
+CREATE TABLE meta_ai_memory(memory_id TEXT PRIMARY KEY,memory_content TEXT NOT NULL,bot_jid_row_id INTEGER)g
+5tablewa_biz_profiles_dc_enabled_featureswa_biz_profiles_dc_enabled_features
+CREATE TABLE wa_biz_profiles_dc_enabled_features(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,catalog_feature_type TEXT)
+tablewa_biz_profiles_bot_attributeswa_biz_profiles_bot_attributes
+CREATE TABLE wa_biz_profiles_bot_attributes(wa_biz_profile_id INTEGER PRIMARY KEY NOT NULL,sub_description TEXT,commands TEXT,prompts TEXT,commands_description TEXT,bot_description TEXT):
+tablewa_biz_profiles_websiteswa_biz_profiles_websites
+CREATE TABLE wa_biz_profiles_websites(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,websites TEXT)Y
+indexsqlite_autoindex_wa_contacts_created_within_wa_1wa_contacts_created_within_wa
+tablewa_contacts_created_within_wawa_contacts_created_within_wa
+CREATE TABLE wa_contacts_created_within_wa(_id TEXT PRIMARY KEY NOT NULL)d
+_tablequick_promotion_payloadquick_promotion_payload
+CREATE TABLE quick_promotion_payload(surface_id INTEGER NOT NULL,trigger_id TEXT NOT NULL,trigger_context TEXT,qp_details BLOB NOT NULL,insertion_time DATETIME NOT NULL)
+ctablesubgroup_infosubgroup_info
+CREATE TABLE subgroup_info(subgroup_raw_jid TEXT NOT NULL,subject TEXT NOT NULL,subject_ts INTEGER,group_type INTEGER NOT NULL DEFAULT 2,group_membership_approval_state INTEGER,linking_timestamp INTEGER,last_known_member_count INTEGER)9
+indexsqlite_autoindex_profile_links_1profile_links
+itableprofile_linksprofile_links
+CREATE TABLE profile_links(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,type TEXT NOT NULL,username TEXT NOT NULL,UNIQUE (jid, type, username) ON CONFLICT REPLACE)q
+{tablewa_group_add_black_listwa_group_add_black_list
+CREATE TABLE wa_group_add_black_list(jid TEXT NOT NULL)Z
+?tablewa_biz_profiles_call_hourswa_biz_profiles_call_hours
+CREATE TABLE wa_biz_profiles_call_hours(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,day_of_week INTEGER NOT NULL,holiday_date TEXT,unavailable_message TEXT,mode INTEGER NOT NULL,start_time INTEGER NOT NULL DEFAULT 0,end_time INTEGER NOT NULL DEFAULT 0)
+Gh&kZx
+
+*		\
+9
+
+
+
+k
+$
+ctablewa_biz_profiles_linked_accounts_tablewa_biz_profiles_linked_accounts_tableFCREATE TABLE wa_biz_profiles_linked_accounts_table(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,account_id TEXT NOT NULL,account_type INTEGER NOT NULL,account_display_name TEXT NOT NULL,account_fan_count INTEGER NOT NULL,account_has_media_post INTEGER NOT NULL DEFAULT 0)iC
+
+tablestatus_rankingstatus_rankingECREATE TABLE status_ranking(_id INTEGER PRIMARY KEY AUTOINCREMENT,total_impressions_per_day INTEGER NOT NULL,total_clicks_per_day INTEGER NOT NULL,jid TEXT NOT NULL,date_time DATETIME NOT NULL,total_views_per_day INTEGER,total_likes_per_day INTEGER,total_text_replies_per_day INTEGER,total_quick_replies_per_day INTEGER)
+tablewa_biz_profile_to_service_offeringswa_biz_profile_to_service_offeringsDCREATE TABLE wa_biz_profile_to_service_offerings(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,wa_biz_category_service_offerings_id TEXT NOT NULL,is_offered BOOLEAN NOT NULL)
+A
+3tablewa_group_descriptionswa_group_descriptionsCCREATE TABLE wa_group_descriptions(jid TEXT NOT NULL,description TEXT NOT NULL,description_id INTEGER,description_time INTEGER,description_setter_jid TEXT NOT NULL,description_id_string TEXT NOT NULL DEFAULT '')j@
+gtablewa_contact_storage_usagewa_contact_storage_usageBCREATE TABLE wa_contact_storage_usage(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,conversation_size INTEGER NOT NULL,conversation_message_count INTEGER NOT NULL)~?
+tablewa_profile_photo_block_listwa_profile_photo_block_listACREATE TABLE wa_profile_photo_block_list(jid TEXT NOT NULL)D>
+3tablecommunity_settingscommunity_settings@CREATE TABLE community_settings(community_raw_jid TEXT NOT NULL,subgroup_member_count_poll_time INTEGER,suggested_groups_view_time_seconds INTEGER)S=
+gtablewa_block_listwa_block_list?CREATE TABLE wa_block_list(jid TEXT NOT NULL){<
+tablewa_profile_links_deny_listwa_profile_links_deny_list>CREATE TABLE wa_profile_links_deny_list(jid TEXT NOT NULL)/;
+indexsqlite_autoindex_wa_props_1wa_props=
+Qtablewa_propswa_props<CREATE TABLE wa_props(_id INTEGER PRIMARY KEY AUTOINCREMENT,prop_name TEXT UNIQUE,prop_value TEXT)
+[tablewa_biz_profiles_categorieswa_biz_profiles_categories;CREATE TABLE wa_biz_profiles_categories(_id INTEGER PRIMARY KEY AUTOINCREMENT,wa_biz_profile_id INTEGER NOT NULL,category_id TEXT NOT NULL,category_name TEXT NOT NULL)
+7tablewa_address_bookwa_address_bookICREATE TABLE wa_address_book(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT,is_whatsapp_user BOOLEAN,company TEXT,display_name TEXT,family_name TEXT,given_name TEXT,is_contact_synced INTEGER,is_starred BOOLEAN,nickname TEXT,number TEXT,phone_label TEXT,phone_type INTEGER,raw_contact_id INTEGER,sort_name TEXT,sync_policy INTEGER,title TEXT)=F
+indexsqlite_autoindex_wa_bot_profiles_1wa_bot_profilesH&E
+tablewa_bot_profileswa_bot_profilesGCREATE TABLE wa_bot_profiles(jid TEXT PRIMARY KEY NOT NULL,tag INTEGER DEFAULT 0,name TEXT,is_default BOOLEAN,attributes TEXT,description TEXT,category TEXT,prompts TEXT,persona_id TEXT,commands_description TEXT,commands TEXT,is_meta_created INTEGER,creator_name TEXT,creator_profile_url TEXT,card_title TEXT,count INTEGER,capabilities LONG,last_updated_time_ms LONG,created_by_me INTEGER,is_created_on_whatsapp INTEGER,is_creator_verified INTEGER,is_voice_enabled INTEGER,is_posing_as_professional INTEGER)
+Gh&I
+
+
+m		|
+Cindexbiz_profile_id_website_indexwa_biz_profiles_websitesZCREATE INDEX biz_profile_id_website_index 
+            ON wa_biz_profiles_websites (
+              wa_biz_profile_id, 
+              websites
+            )#W
+Kindexsent_real_issue_timestamp_indexwa_trusted_contacts_sendYCREATE INDEX sent_real_issue_timestamp_index ON wa_trusted_contacts_send (real_issue_timestamp)EI
+indexsqlite_autoindex_wa_trusted_contacts_1wa_trusted_contactsK<H
+tablewa_trusted_contactswa_trusted_contactsJCREATE TABLE wa_trusted_contacts(jid TEXT PRIMARY KEY NOT NULL,incoming_tc_token BLOB NOT NULL,incoming_tc_token_timestamp LONG NOT NULL)"V
+Mindexsent_tc_token_timestamp_indexwa_trusted_contacts_sendXCREATE INDEX sent_tc_token_timestamp_index ON wa_trusted_contacts_send (sent_tc_token_timestamp)
+3indexgroup_admin_settings_jid_indexwa_group_admin_settingsWCREATE UNIQUE INDEX group_admin_settings_jid_index ON wa_group_admin_settings (jid)yT
+#indexblock_list_jid_indexwa_block_listVCREATE UNIQUE INDEX block_list_jid_index
+            ON wa_block_list (jid)_S
+indexdate_indexstatus_rankingUCREATE INDEX date_index
+      ON status_ranking(date_time)tR
+indexdate_and_jid_indexstatus_rankingTCREATE INDEX date_and_jid_index
+      ON status_ranking(jid, date_time)
+Gindexcommunity_settings_raw_jid_indexcommunity_settingsSCREATE UNIQUE INDEX community_settings_raw_jid_index ON community_settings(community_raw_jid)'P
+/indexbiz_profile_id_service_offerings_indexwa_biz_profile_to_service_offeringsRCREATE UNIQUE INDEX biz_profile_id_service_offerings_index
+            ON wa_biz_profile_to_service_offerings (
+              wa_biz_profile_id,
+              wa_biz_category_service_offerings_id
+            )GO
+kindexdc_enabled_features_biz_profile_id_indexwa_biz_profiles_dc_enabled_featuresQCREATE INDEX dc_enabled_features_biz_profile_id_index ON wa_biz_profiles_dc_enabled_features(wa_biz_profile_id)
+1indexaddress_book_raw_contact_id_indexwa_address_bookPCREATE INDEX address_book_raw_contact_id_index ON wa_address_book (raw_contact_id)nM
+indexaddress_book_jid_indexwa_address_bookOCREATE INDEX address_book_jid_index ON wa_address_book (jid)
+#indexaddress_book_is_wa_indexwa_address_bookNCREATE INDEX address_book_is_wa_index ON wa_address_book (is_whatsapp_user)_K
+otablewa_pix_block_listwa_pix_block_listMCREATE TABLE wa_pix_block_list(jid TEXT NOT NULL)/J
+tablewa_biz_profileswa_biz_profilesLCREATE TABLE wa_biz_profiles(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,email TEXT,address TEXT,business_description TEXT,latitude REAL,longitude REAL,tag TEXT,vertical TEXT,time_zone TEXT,hours_note TEXT,has_catalog BOOLEAN DEFAULT 0,address_postal_code TEXT,address_city_id TEXT,address_city_name TEXT,commerce_experience TEXT,shop_url TEXT,cart_enabled BOOLEAN DEFAULT 0,commerce_manager_url TEXT,direct_connection_enabled BOOLEAN DEFAULT 0,is_shop_banned BOOLEAN DEFAULT 0,default_postcode TEXT,location_name TEXT,galaxy_business_enabled BOOLEAN DEFAULT 0,cover_photo_url TEXT,cover_photo_id TEXT,custom_url TEXT,member_since TEXT,capi_calling_enabled BOOLEAN DEFAULT 0,is_responsive BOOLEAN DEFAULT 0,postcode_type TEXT,price_tier_id TEXT,business_blocked_status TEXT,survey_sampling_rate INTEGER,is_offerings_eligible BOOLEAN DEFAULT 0,automated_type INTEGER,is_typing_indicator_enabled INTEGER,calling_hidden_entry_points INTEGER,business_has_shopping_flow INTEGER,is_callback_permissions_enabled INTEGER,call_hours_time_zone TEXT,call_hours_unavailable_message TEXT,is_business_initiated_calling_enabled INTEGER,business_call_permission_params TEXT,automated_greeting_message_body TEXT,automated_greeting_message_type TEXT,automated_greeting_message_payload TEXT)
+{
+
+(P
+
+N		
+]indexgroup_relationship_parent_raw_jid_indexgroup_relationshipqCREATE INDEX group_relationship_parent_raw_jid_index 
+            ON group_relationship (parent_raw_jid)Sn
+indexbiz_profile_id_indexwa_biz_profiles_direct_connection_allowed_country_codespCREATE INDEX biz_profile_id_index
+            ON wa_biz_profiles_direct_connection_allowed_country_codes(wa_biz_profile_id)
+Kindexbiz_profile_id_hours_indexwa_biz_profiles_hours[CREATE INDEX biz_profile_id_hours_index
+            ON wa_biz_profiles_hours(wa_biz_profile_id)
+aindexbiz_category_id_service_offerings_indexwa_biz_category_service_offeringsoCREATE UNIQUE INDEX biz_category_id_service_offerings_index 
+            ON wa_biz_category_service_offerings(
+              _id, 
+              category_id
+            )
+l
+7indexentry_point_jid_indexwa_last_entry_pointnCREATE UNIQUE INDEX entry_point_jid_index 
+              ON wa_last_entry_point (jid)`k
+Gindexwa_contact_storage_usage_indexwa_contact_storage_usagemCREATE INDEX wa_contact_storage_usage_index 
+            ON wa_contact_storage_usage (
+              jid, 
+              conversation_size DESC
+            )hj
+indexvname_jid_indexwa_vnameslCREATE UNIQUE INDEX vname_jid_index 
+            ON wa_vnames (jid)Yi
+indexmembership_request_creation_time_indexnon_admin_group_membership_approval_requestskCREATE INDEX membership_request_creation_time_index ON non_admin_group_membership_approval_requests(request_creation_time)
+Cindexbrand_id_list_jid_indexwa_biz_brand_id_listjCREATE UNIQUE INDEX brand_id_list_jid_index
+        ON wa_biz_brand_id_list (jid, brand_id)/g
+_indexbiz_profile_id_call_hours_indexwa_biz_profiles_call_hoursiCREATE INDEX biz_profile_id_call_hours_index
+            ON wa_biz_profiles_call_hours(wa_biz_profile_id).f
+]indexlogging_entry_point_timestamp_indexwa_logging_entry_pointhCREATE INDEX logging_entry_point_timestamp_index ON wa_logging_entry_point (entry_point_type, timestamp)#e
+Sindexlogging_entry_point_lid_indexwa_logging_entry_pointgCREATE UNIQUE INDEX logging_entry_point_lid_index ON wa_logging_entry_point (lid, entry_point_type)#d
+Sindexlogging_entry_point_jid_indexwa_logging_entry_pointfCREATE UNIQUE INDEX logging_entry_point_jid_index ON wa_logging_entry_point (jid, entry_point_type)lc
+indexprofile_links_jid_indexprofile_linkseCREATE INDEX profile_links_jid_index ON profile_links (jid)
+3indexmeta_ai_memory_memory_content_indexmeta_ai_memorydCREATE INDEX meta_ai_memory_memory_content_index ON meta_ai_memory (memory_content)
+/indexwa_group_descriptions_jid_indexwa_group_descriptionscCREATE UNIQUE INDEX wa_group_descriptions_jid_index ON wa_group_descriptions(jid)$`
+Sindexincoming_tc_token_timestamp_indexwa_trusted_contactsbCREATE INDEX incoming_tc_token_timestamp_index ON wa_trusted_contacts (incoming_tc_token_timestamp)
+7indexbiz_integrity_signals_jid_indexwa_biz_integrity_signalsaCREATE UNIQUE INDEX biz_integrity_signals_jid_index ON wa_biz_integrity_signals (jid)G^
+1indexvname_localized_indexwa_vnames_localized`CREATE UNIQUE INDEX vname_localized_index
+            ON wa_vnames_localized (
+              jid,
+              lg,
+              lc
+            )
+;indexis_contact_synced_indexwa_contacts_CREATE INDEX is_contact_synced_index
+                ON wa_contacts (is_contact_synced)W\
+{indexjid_indexwa_contacts^CREATE INDEX jid_index
+            ON wa_contacts (jid)i[
+indexis_wa_indexwa_contacts]CREATE INDEX is_wa_index
+            ON wa_contacts (is_whatsapp_user)>Z
+sindexdogfooder_event_type_message_indexdogfooder_diagnostics_events\CREATE INDEX dogfooder_event_type_message_index
+        ON dogfooder_diagnostics_events (event_type, event_message)
+Gh&IV
+
+
+;		5
+ytriggerbefore_delete_dc_enabled_features_triggerwa_biz_profilesCREATE TRIGGER before_delete_dc_enabled_features_trigger BEFORE DELETE ON wa_biz_profiles BEGIN DELETE FROM wa_biz_profiles_dc_enabled_features WHERE wa_biz_profile_id = old._id; END/|
+Windexrequest_creation_time_indexgroup_membership_approval_requests~CREATE INDEX request_creation_time_index ON group_membership_approval_requests(request_creation_time)c{
+Kindexbiz_profile_id_category_indexwa_biz_profiles_categories}CREATE INDEX biz_profile_id_category_index
+            ON wa_biz_profiles_categories (
+              wa_biz_profile_id,
+              category_id
+            )^z
+Gindexquick_promotion_payload_indexquick_promotion_payload|CREATE UNIQUE INDEX quick_promotion_payload_index 
+            ON quick_promotion_payload (
+              surface_id, 
+              trigger_id
+            )	y
+%indexuser_jid_indexrecently_accepted_deeplink_invites{CREATE INDEX user_jid_index ON recently_accepted_deeplink_invites (user_jid)1x
+Windexbiz_integrity_chat_settings_indexwa_biz_integrity_chat_settingszCREATE UNIQUE INDEX biz_integrity_chat_settings_index
+        ON wa_biz_integrity_chat_settings (jid)9w
+iindexbiz_profile_id_service_area_indexwa_biz_profiles_service_areasyCREATE INDEX biz_profile_id_service_area_index
+            ON wa_biz_profiles_service_areas(wa_biz_profile_id)"v
+Mindexgroup_add_black_list_jid_indexwa_group_add_black_listxCREATE UNIQUE INDEX group_add_black_list_jid_index 
+            ON wa_group_add_black_list (jid)Qu
+indexwa_biz_profiles_linked_accounts_indexwa_biz_profiles_linked_accounts_tablewCREATE INDEX wa_biz_profiles_linked_accounts_index
+            ON wa_biz_profiles_linked_accounts_table(wa_biz_profile_id)t
+Cindexsubgroup_raw_jid_indexsubgroup_infovCREATE UNIQUE INDEX subgroup_raw_jid_index 
+            ON subgroup_info (subgroup_raw_jid)
+-indexbiz_profile_id_price_tier_indexwa_biz_profiles_price_tiersuCREATE INDEX biz_profile_id_price_tier_index ON wa_biz_profiles_price_tiers(_id)
+r
++indexinterop_block_list_jid_indexwa_block_list_interoptCREATE UNIQUE INDEX interop_block_list_jid_index ON wa_block_list_interop (jid)
+{triggerbusiness_profiles_bd_for_bot_attributes_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_bot_attributes_trigger BEFORE DELETE ON wa_biz_profiles BEGIN DELETE FROM wa_biz_profiles_bot_attributes WHERE wa_biz_profile_id = old._id; END
+}triggerbusiness_profiles_bd_for_biz_profile_to_service_offerings_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_biz_profile_to_service_offerings_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profile_to_service_offerings
+                WHERE
+                  wa_biz_profile_id=old._id;
+              END
+)indexbiz_profile_jid_indexwa_biz_profilessCREATE UNIQUE INDEX biz_profile_jid_index
+            ON wa_biz_profiles (jid):p
+qindexgroup_relationship_subgroup_raw_jid_indexgroup_relationshiprCREATE UNIQUE INDEX group_relationship_subgroup_raw_jid_index 
+            ON group_relationship (subgroup_raw_id)
+?triggerbusiness_profiles_bd_for_call_hours_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_call_hours_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles_call_hours
+                WHERE
+                  wa_biz_profile_id=old._id;
+              END
+Gh&;S
+.
+
+u
+	o
+ytablewa_contactswa_contacts
+CREATE TABLE wa_contacts(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,is_whatsapp_user BOOLEAN NOT NULL,status TEXT,status_timestamp INTEGER,number TEXT,raw_contact_id INTEGER,display_name TEXT,phone_type INTEGER,phone_label TEXT,photo_ts INTEGER,thumb_ts INTEGER,photo_id_timestamp INTEGER,given_name TEXT,family_name TEXT,wa_name TEXT,sort_name TEXT,nickname TEXT,company TEXT,title TEXT,status_autodownload_disabled INTEGER,keep_timestamp INTEGER,is_spam_reported INTEGER,is_sidelist_synced BOOLEAN DEFAULT 0,is_business_synced BOOLEAN DEFAULT 0,disappearing_mode_duration INTEGER,disappearing_mode_timestamp LONG,history_sync_initial_phash TEXT,is_starred BOOLEAN,is_wa_created_contact BOOLEAN,sync_policy INTEGER,status_emoji TEXT,is_contact_synced INTEGER,is_reachable INTEGER,external_user_state INTEGER)U
+
+indexsqlite_autoindex_wa_biz_profiles_price_tiers_1wa_biz_profiles_price_tiers
+5tablewa_biz_profiles_price_tierswa_biz_profiles_price_tiers
+CREATE TABLE wa_biz_profiles_price_tiers(_id TEXT PRIMARY KEY,name TEXT,symbol TEXT)q
+{tablewa_last_seen_block_listwa_last_seen_block_list
+CREATE TABLE wa_last_seen_block_list(jid TEXT NOT NULL)`
+
+Wtablewa_group_admin_settingswa_group_admin_settingsCREATE TABLE wa_group_admin_settings(jid TEXT NOT NULL,restrict_mode BOOLEAN NOT NULL,announcement_group BOOLEAN NOT NULL DEFAULT 0,no_frequently_forwarded BOOLEAN NOT NULL DEFAULT 0,ephemeral_duration INTEGER DEFAULT NULL,creator_jid TEXT,in_app_support BOOLEAN NOT NULL DEFAULT 0,is_suspended BOOLEAN,group_state INTEGER NOT NULL DEFAULT 0,require_membership_approval BOOLEAN NOT NULL DEFAULT 0,member_add_mode INTEGER NOT NULL DEFAULT 0,incognito BOOLEAN,is_pending_requests_banner_acknowledged BOOLEAN NOT NULL DEFAULT 0,is_report_to_admin_enabled BOOLEAN,addressing_mode TEXT NOT NULL DEFAULT 'pn',allow_non_admin_subgroup_creation BOOLEAN,is_pending_suggestions_banner_acknowledged BOOLEAN NOT NULL DEFAULT 0,history_enabled BOOLEAN,auto_add_disabled BOOLEAN,is_hidden_subgroup INTEGER,e2ee_state INTEGER,member_link_mode INTEGER NOT NULL DEFAULT 0,allow_member_labels INTEGER NOT NULL DEFAULT 0,move_to_suspend_folder INTEGER)	
+Ctablegroup_relationshipgroup_relationshipCREATE TABLE group_relationship(parent_raw_jid TEXT NOT NULL,subgroup_raw_id TEXT NOT NULL)
+#tablewa_biz_integrity_signalswa_biz_integrity_signals
+CREATE TABLE wa_biz_integrity_signals(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,dhash TEXT,fb_linked_page_number_of_likes REAL,ig_linked_page_number_of_followers REAL,is_suspicious INTEGER DEFAULT 0,join_date_ms REAL,is_banned INTEGER DEFAULT 0,phone_country_code TEXT,trust_tier TEXT,mv_friction_eligibility INTEGER)
+{tablewa_vnameswa_vnames	CREATE TABLE wa_vnames(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT NOT NULL,serial INTEGER NOT NULL,issuer TEXT NOT NULL,expires INTEGER,verified_name TEXT NOT NULL,industry TEXT,city TEXT,country TEXT,verified_level INTEGER,identity_unconfirmed_since INTEGER,cert_blob BLOB,host_storage INTEGER DEFAULT 0,actual_actors INTEGER DEFAULT 0,privacy_mode_ts INTEGER DEFAULT 0)_
+Ytablewa_logging_entry_pointwa_logging_entry_point
+CREATE TABLE wa_logging_entry_point(_id INTEGER PRIMARY KEY AUTOINCREMENT,jid TEXT,lid TEXT,entry_point_type INTEGER NOT NULL,timestamp INTEGER NOT NULL,payload BLOB)e
+stablewa_about_block_listwa_about_block_list
+CREATE TABLE wa_about_block_list(jid TEXT NOT NULL)P
+Ytablesqlite_sequencesqlite_sequence
+CREATE TABLE sqlite_sequence(name,seq)Y
+5tabledogfooder_diagnostics_eventsdogfooder_diagnostics_events
+CREATE TABLE dogfooder_diagnostics_events(_id INTEGER PRIMARY KEY AUTOINCREMENT,event_type TEXT NOT NULL,event_message TEXT,event_timestamp INTEGER)
+Otablegroup_membership_countgroup_membership_count
+CREATE TABLE group_membership_count(jid_row_id INTEGER PRIMARY KEY,member_count INTEGER NOT NULL)W
+Gh&xQj
+Ytriggercontact_bu_for_business_integrity_signalswa_contactsCREATE TRIGGER contact_bu_for_business_integrity_signals BEFORE UPDATE ON wa_contacts BEGIN UPDATE wa_biz_integrity_signals SET jid = new.jid WHERE jid = old.jid; END*
+otriggercontact_bd_for_business_profileswa_contactsCREATE TRIGGER contact_bd_for_business_profiles
+            BEFORE DELETE ON wa_contacts
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles
+                WHERE
+                  jid=old.jid;
+              END[
+?triggercontact_bd_for_business_integrity_signalswa_contactsCREATE TRIGGER contact_bd_for_business_integrity_signals BEFORE DELETE ON wa_contacts BEGIN DELETE FROM wa_biz_integrity_signals WHERE jid = old.jid; ENDO
+%triggercontact_bd_for_biz_integrity_chat_settingswa_contactsCREATE TRIGGER contact_bd_for_biz_integrity_chat_settings
+            BEFORE DELETE ON wa_contacts
+              BEGIN
+                DELETE FROM
+                  wa_biz_integrity_chat_settings
+                WHERE
+                  jid = old.jid;
+              END`
+Atriggerbusiness_profiles_bd_for_websites_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_websites_trigger 
+            BEFORE DELETE ON wa_biz_profiles 
+              BEGIN 
+                DELETE FROM 
+                  wa_biz_profiles_websites 
+                WHERE 
+                  wa_biz_profile_id=old._id; 
+            ENDj
+Ktriggerbusiness_profiles_bd_for_service_areas_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_service_areas_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles_service_areas
+                WHERE
+                  wa_biz_profile_id=old._id;
+              ENDv
+_triggerbusiness_profiles_bd_for_linked_accounts_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_linked_accounts_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles_linked_accounts_table
+                WHERE
+                  wa_biz_profile_id=old._id;
+              ENDR
++triggerbusiness_profiles_bd_for_hours_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_hours_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles_hours
+                WHERE
+                  wa_biz_profile_id=old._id;
+              ENDc
+Ctriggerbusiness_profiles_bd_for_categories_triggerwa_biz_profilesCREATE TRIGGER business_profiles_bd_for_categories_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles_categories
+                WHERE
+                  wa_biz_profile_id = old._id;
+              END
++triggerwa_biz_profiles_bd_direct_connection_allowed_country_codes_triggerwa_biz_profilesCREATE TRIGGER wa_biz_profiles_bd_direct_connection_allowed_country_codes_trigger
+            BEFORE DELETE ON wa_biz_profiles
+              BEGIN
+                DELETE FROM
+                  wa_biz_profiles_direct_connection_allowed_country_codes
+                WHERE
+                  wa_biz_profile_id = old._id;
+              ENDR
+5triggergroup_admin_settings_deletion_triggerwa_contactsCREATE TRIGGER group_admin_settings_deletion_trigger BEFORE DELETE ON wa_contacts BEGIN DELETE FROM wa_group_admin_settings WHERE jid = old.jid; END[
+
+Qtriggercontact_bu_for_business_profileswa_contactsCREATE TRIGGER contact_bu_for_business_profiles
+            BEFORE UPDATE ON wa_contacts
+              BEGIN
+                UPDATE
+                  wa_biz_profiles
+                SET
+                  jid = new.jid
+                WHERE
+                  jid = old.jid;
+              END
